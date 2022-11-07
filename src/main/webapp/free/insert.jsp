@@ -33,6 +33,7 @@
 		<div>
 			<textarea rows="2" cols="20" name="content"></textarea>
 		</div>
+		<input type="hidden" name="hit" value="0">
 		<input type="submit" value="작성완료">
 		<input type="reset" value="다시작성">
 		<input type="button" value="목록" id="btn_list">

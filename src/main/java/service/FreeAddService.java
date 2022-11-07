@@ -17,7 +17,7 @@ public class FreeAddService implements FreeService {
 		String writer = request.getParameter("writer");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		String ip = request.getParameter("ip");
+		String ip = request.getRemoteAddr();
 		Long hit = Long.parseLong(request.getParameter("hit"));
 		
 		Free free = Free.builder()

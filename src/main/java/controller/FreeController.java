@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,7 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import common.ActionForward;
 import service.FreeAddService;
+import service.FreeDetailService;
 import service.FreeListService;
+import service.FreeModifyService;
 import service.FreeRemoveService;
 import service.FreeService;
 
@@ -42,10 +45,12 @@ public class FreeController extends HttpServlet {
 		case "/free/remove.do":
 			service = new FreeRemoveService();
 			break;
-		
-			
-			
-			
+		case "/free/detail.do":
+			service = new FreeDetailService();
+			break;
+		case "/free/modify.do":
+			service = new FreeModifyService();
+			break;
 		case "/free/insertPage.do":
 			af = new ActionForward("/free/insert.jsp", false);
 			break;

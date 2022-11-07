@@ -27,7 +27,26 @@
 		  FROM FREE
 		 WHERE FREENO = #{freeNo}
 	</delete>
-
-
-
+	
+	<!-- 4. 상세보기 -->
+	<select id="selectBoardByNo" parameterType="long" resultType="Free">
+		SELECT FREENO, WRITER, TITLE, CONTENT, IP, HIT
+		  FROM FREE
+		 WHERE FREENO = #{freeNo}
+	</select>
+	
+	<!-- 5. 수정 -->
+	<update id="updateBoard" parameterType="Free">
+		UPDATE FREE
+		   SET TITLE = #{title}, CONTENT = #{content}
+		 WHERE FREENO = #{freeNo}
+	</update>
+	
+	<!-- 6. 조회수 -->
+	<update id="updateHit" parameterType="long">
+		UPDATE FREE
+		   SET HIT = HIT + 1
+		 WHERE HIT = #{hit}
+	</update>
+		 
 </mapper>

@@ -62,6 +62,32 @@ public class FreeDao {
 		return result;
 	}
 	
+	// 4. 상세보기
+	public Free selectBoardByNo(long freeNo) {
+		SqlSession ss = factory.openSession();
+		Free free = ss.selectOne(mapper + "selectBoardByNo", freeNo);
+		ss.close();
+		return free;
+	}
+	
+	// 5. 수정
+	public int updateBoard(Free free) {
+		SqlSession ss = factory.openSession(false);
+		int result = ss.update(mapper + "updateBoard", free);
+		if(result > 0) {
+			ss.commit();
+		}
+		ss.close();
+		return result;
+	}
+	
+	// 6. 조회수
+	public long updateHit(long hit) {
+		SqlSession ss = factory.openSession(false);
+		long result = ss.update(mapper + "updateHit", hit);
+		return result;
+	}
+	
 	
 	
 	

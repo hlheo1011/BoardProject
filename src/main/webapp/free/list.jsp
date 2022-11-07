@@ -35,12 +35,15 @@
 				<c:forEach items="${frees}" var="f">
 					<tr>
 						<td>${f.freeNo}</td>
-						<td>${f.title}</td>
+						<td><a href="#" onclick="fn_detail(${f.freeNo})">${f.title}</a></td>
 						<td>${f.writer}</td>
 						<td>${f.hit}</td>
 						<td><a href="#" onclick="fn_remove(${f.freeNo})">X</a></td>
 					</tr>
 						<script>
+							function fn_detail(freeNo){
+								location.href = '${contextPath}/free/detail.do?freeNo=' + freeNo;
+							}
 							function fn_remove(freeNo){
 								location.href = '${contextPath}/free/remove.do?freeNo=' + freeNo;
 							}
